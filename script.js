@@ -73,7 +73,8 @@ function loopAppend(items) {
   let loopToArr = [];
   let loopCommentArr = [];
   let loopFromArr = [];
-  for (let i = 0; i < to.length; i++) {
+  // for (let i = 0; i < to.length; i++) {// first to last endorsement
+ for(let i = to.length -1; i >= 0; i--) {// last to first endorsement
     console.log(comment[i]);
     console.log(to[i]);
     console.log(from[i]);
