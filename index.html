@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="HTML, CSS, JavaScript" />
+    <meta name="author" content="Michael Bridgeman" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./assets/favicon_io/site.webmanifest" />
+    
+    <title>We Are the Champions</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://kit.fontawesome.com/e2b41dab5f.js" crossorigin="anonymous"></script>  </head>
+  <body>
+    <header>
+      <img
+        src="./assets/freddie.png"
+        alt="Freddie Mercury Silhouette"
+        id="logo"
+      />
+    </header>
+    <main>
+      <h1 class="heading">We are the Champions</h1>
+      <section class="flex-column"> 
+        <input
+          type="text"
+          placeholder="Write your endorsement here"
+          id="endorsementInput"
+          autocomplete="on"
+          class="inputs"
+        />
+
+        <!-- <div class="flex-row"> -->
+          <input
+            type="text"
+            placeholder="To"
+            id="to-input"
+            class="inputs nameInputs"
+            name="sender"
+          />
+          <input
+            type="text"
+            placeholder="From"
+            id="from-input"
+            class="inputs nameInputs"
+          />
+          <!-- </div>   -->
+          <button id="publishBtn">Publish</button>
+        </section>
+      <section id="endorsementsArea" class="flex-column">
+        <h2 class="heading endHeading">- Endorsements -</h2>
+        <article id="endorsements-list">
+        </article>
+      </section>
+    </main>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

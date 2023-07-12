@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans:ital@0;1&display=swap');
+/* font-family: 'Inter', sans-serif;
+font-family: 'Josefin Sans', sans-serif; */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #064E3B;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+header, main {
+    max-width: 300px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.heading {
+    font-family:'Josefin Sans', sans-serif;
+    color:#ffffff;
+}
+
+.endHeading {
+    margin: 20px 0 0 0;
+}
+
+.inputs {
+    background: #6EE7B7;
+    display: flex;
+    border-radius: 5px;
+    font-family: 'Inter', sans-serif;
+    padding: 10px 0 10px 5px;
+}
+
+.inputs::placeholder {
+    color: #000;
+    font-family: 'Inter', sans-serif;
+    padding: 10px 0 10px 5px;
+}
+
+.nameInputs {
+    margin-bottom: 20px;
+}
+
+.itemBox {
+    margin: 20px 0;
+    background: #ffffff;
+    padding: 5px 15px;
+    border-radius: 5px;
+    order: 0;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.noBottom {
+    margin-bottom: 0;
+}
+
+.last{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+#logo {
+    width: 150px;
+    padding-top: 50px;
+}
+
+#publishBtn {
+    background: #C4B5FD;
+    color: #04131C;
+}
+
+#endorsementInput {
+    margin-bottom: 20px;
+}
+
+#publishBtn {
+    border: none;
+    box-shadow: none;
+    border-radius: 5px;
+    padding: 20px;
+    color: #04131C;
+    font-family:'Josefin Sans', sans-serif;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+#publishBtn:hover {
+    background: #4C1D95;
+    color:#ffffff;
+}
+
+#endorsements-list {
+    margin: 0 0 20px 0;
+    color: #1B1924;
+    text-align: left;
+    border-radius: 5px;
+    padding: 10px 5px;
+    font-family: 'Inter', sans-serif;
+}
+
+@media (min-width: 576px), (orientation: portrait) { 
+    header, main {
+        max-width: 476px;
+    }
+ }
+
