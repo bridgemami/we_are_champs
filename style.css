@@ -45,6 +45,11 @@ header, main {
     padding: 10px 0 10px 5px;
 }
 
+.hide {
+    display: none;
+}
+
+
 .inputs::placeholder {
     color: #000;
     font-family: 'Inter', sans-serif;

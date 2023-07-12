@@ -24,14 +24,23 @@ const publishBtnEl = document.getElementById("publishBtn");
 const endorsementsListEl = document.getElementById("endorsements-list");
 const toEl = document.getElementById("to-input");
 const fromEl = document.getElementById("from-input");
+const unfinishedEl = document.getElementById("unfinished");
 
 //add to list and database
 publishBtnEl.addEventListener("click", function () {
   let endorsementValue = textFieldEl.value;
   let toInputValue = toEl.value;
   let fromInputValue = fromEl.value;
+  //if the user leaves a box blank
+  if(endorsementValue ==="" || toInputValue ==="" || fromInputValue === ""){
+    unfinishedEl.classList.remove("hide");
+    unfinishedEl.classList.add("itemBox");
+  }
+  else{
   console.log(endorsementValue);
   //to push the user infor into db
+  unfinishedEl.classList.remove("itemBox");
+    unfinishedEl.classList.add("hide");
   push(toDb, toInputValue);
   push(commentDb, endorsementValue);
   push(fromDb, fromInputValue);
@@ -39,6 +48,7 @@ publishBtnEl.addEventListener("click", function () {
   clearValue(textFieldEl);
   clearValue(toEl);
   clearValue(fromEl);
+  }
 });
 // using the db to append the site and refreshing the endorsement list.
 onValue(db, function (snapshot) {
