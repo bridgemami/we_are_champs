@@ -78,12 +78,12 @@ function clearValue(element) {
   element.value = "";
 }
 
-function appendItem(comment, to, from, element) {
+function appendItem(appendComment, appendTo, appendFrom, element) {
   let section = document.createElement("section");
   section.classList.add("itemBox");
 
-  section.innerHTML = `<p class="bold noBottom">To: ${to}</p>
-    <p class="noBottom">${comment}</p>
-    <p class="bold last">From: ${from}</p>`;
+  section.innerHTML = `<p class="bold noBottom">To: ${appendTo}</p>
+    <p class="noBottom">${appendComment}</p>
+    <p class="bold last">From: ${appendFrom}</p>`;
   element.appendChild(section);
 }
