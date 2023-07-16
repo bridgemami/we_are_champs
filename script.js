@@ -8,16 +8,12 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
-  databaseURL: "https://endorsements-b4a86-default-rtdb.firebaseio.com/",
+  databaseURL: "https://endorsements-9b6d2-default-rtdb.firebaseio.com//",
 };
-console.log(appSettings);
 
 const app = initializeApp(appSettings);
 const database = getDatabase(app);
-const db = ref(database, "endorsements");
-const toDb = ref(database, "endorsements/to");
-const commentDb = ref(database, "endorsements/comments");
-const fromDb = ref(database, "endorsements/from");
+const endorsementsDb = ref(database, "endorsements");
 
 const textFieldEl = document.getElementById("endorsement-input");
 const publishBtnEl = document.getElementById("publishBtn");
@@ -28,33 +24,29 @@ const unfinishedEl = document.getElementById("unfinished");
 
 //add to list and database
 publishBtnEl.addEventListener("click", function () {
-  let endorsementValue = textFieldEl.value;
+  let endorsementInputValue = textFieldEl.value;
   let toInputValue = toEl.value;
   let fromInputValue = fromEl.value;
-  //if the user leaves a box blank
-  if(endorsementValue ==="" || toInputValue ==="" || fromInputValue === ""){
+
+  if(endorsementInputValue ==="" || toInputValue ==="" || fromInputValue === ""){
     unfinishedEl.classList.remove("hide");
     unfinishedEl.classList.add("itemBox");
   }
   else{
-  console.log(endorsementValue);
-  //to push the user infor into db
   unfinishedEl.classList.remove("itemBox");
     unfinishedEl.classList.add("hide");
-  push(toDb, toInputValue);
-  push(commentDb, endorsementValue);
-  push(fromDb, fromInputValue);
-  //clear the values
+
+  push(endorsementsDb,{ "to":toInputValue, "comment":endorsementInputValue, "from":fromInputValue});
+
   clearValue(textFieldEl);
   clearValue(toEl);
   clearValue(fromEl);
   }
 });
 // using the db to append the site and refreshing the endorsement list.
-onValue(db, function (snapshot) {
+onValue(endorsementsDb, function (snapshot) {
   if (snapshot.exists()) {
     let arr = Object.values(snapshot.val());
-    console.log(arr);
     clearElement(endorsementsListEl);
     loopAppend(arr);
   } else {
@@ -63,31 +55,14 @@ onValue(db, function (snapshot) {
 });
 
 function loopAppend(items) {
-  console.log(items);
-  let item = Object.values(items);
-  let to = Object.values(Object.values(item)[2]);
-  let comment = Object.values(Object.values(item)[0]);
-  let from = Object.values(Object.values(item)[1]);
-  console.log(to.length);
-  console.log(comment);
-  let loopToArr = [];
-  let loopCommentArr = [];
-  let loopFromArr = [];
-  // for (let i = 0; i < to.length; i++) {// first to last endorsement
- for(let i = to.length -1; i >= 0; i--) {// last to first endorsement
-    console.log(comment[i]);
-    console.log(to[i]);
-    console.log(from[i]);
-    //from array
-    loopFromArr.push(from[i]);
-    //comment array
-    loopCommentArr.push(comment[i]);
-    //to array
-    loopToArr.push(to[i]);
 
-    appendItem(loopToArr, loopCommentArr, loopFromArr, endorsementsListEl);
+ for(let i = (items.length - 1 ); i >= 0; i--) {
+    let completedEndorsement = Object.values(items[i]); 
+    console.log(completedEndorsement); 
+     appendItem(completedEndorsement, endorsementsListEl);
+   }
   }
-}
+
 
 function clearElement(element) {
   element.innerHTML = "";
@@ -97,14 +72,15 @@ function clearValue(element) {
   element.value = "";
 }
 
-function appendItem(itemOne, itemTwo, itemThree, element) {
-  console.log(itemOne);
+function appendItem(endorsementItems, element) {
+  // console.log(to);
   let section = document.createElement("section");
-  for (let i = 0; i < itemOne.length; i++) {
+
+  for (let i = (endorsementItems.length - 1 ); i >= 0; i--) {
     section.classList.add("itemBox");
-    section.innerHTML = `<p class="bold noBottom">To: ${itemOne[i]}</p>
-    <p class="noBottom">${itemTwo[i]}</p>
-    <p class="bold last">From: ${itemThree[i]}</p>`;
+    section.innerHTML = `<p class="bold noBottom">To: ${endorsementItems[2]}</p>
+    <p class="noBottom">${endorsementItems[0]}</p>
+    <p class="bold last">From: ${endorsementItems[1]}</p>`;
     element.appendChild(section);
   }
 }
