@@ -7,7 +7,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js";
 
 const appSettings = {
-  databaseURL: "https://endorsements-9b6d2-default-rtdb.firebaseio.com//",
+  databaseURL: "https://endorsements-5853e-default-rtdb.firebaseio.com/",
 };
 
 const app = initializeApp(appSettings);
@@ -52,9 +52,11 @@ publishBtnEl.addEventListener("click", function () {
 onValue(endorsementsDb, function (snapshot) {
   if (snapshot.exists()) {
     let arr = Object.values(snapshot.val());
+    console.log(arr);
     clearElement(endorsementsListEl);
     loopAppend(arr);
-  } else {
+  } 
+  else {
     endorsementsListEl.innerHTML = `<p class="itemBox">No endorsements here... yet</p>`;
   }
 });
