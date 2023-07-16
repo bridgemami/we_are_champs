@@ -2,7 +2,10 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Give a shout out to your colleague for completing their task." />
+    <meta
+      name="description"
+      content="Give a shout out to your colleague for completing their task."
+    />
     <meta name="keywords" content="HTML, CSS, JavaScript" />
     <meta name="author" content="Michael Bridgeman" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,7 +30,11 @@
     <link rel="manifest" href="./assets/favicon_io/site.webmanifest" />
     <title>We Are The Champions</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <script src="https://kit.fontawesome.com/e2b41dab5f.js" crossorigin="anonymous"></script>  </head>
+    <script
+      src="https://kit.fontawesome.com/e2b41dab5f.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
   <body>
     <header>
       <img
@@ -38,37 +45,36 @@
     </header>
     <main>
       <h1 class="heading">We are the Champions</h1>
-      <section class="flex-column"> 
+      <section class="flex-column">
         <input
           type="text"
           placeholder="Write your endorsement here"
-          id="endorsementInput"
+          id="endorsement-input"
           autocomplete="on"
           class="inputs"
         />
 
         <!-- <div class="flex-row"> -->
-          <input
-            type="text"
-            placeholder="To"
-            id="to-input"
-            class="inputs nameInputs"
-            name="sender"
-          />
-          <input
-            type="text"
-            placeholder="From"
-            id="from-input"
-            class="inputs nameInputs"
-          />
-          <!-- </div>   -->
-          <button id="publishBtn">Publish</button>
-          <p class="hide" id="unfinished">Please complete all the fields.</p>
-        </section>
+        <input
+          type="text"
+          placeholder="To"
+          id="to-input"
+          class="inputs name-inputs"
+          name="sender"
+        />
+        <input
+          type="text"
+          placeholder="From"
+          id="from-input"
+          class="inputs name-inputs"
+        />
+        <!-- </div>   -->
+        <button id="publishBtn">Publish</button>
+        <p class="hide" id="unfinished">Please complete all the fields.</p>
+      </section>
       <section id="endorsementsArea" class="flex-column">
         <h2 class="heading endHeading">- Endorsements -</h2>
-        <article id="endorsements-list">
-        </article>
+        <article id="endorsements-list"></article>
       </section>
     </main>
     <script src="script.js" type="module"></script>

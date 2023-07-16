@@ -19,7 +19,7 @@ const toDb = ref(database, "endorsements/to");
 const commentDb = ref(database, "endorsements/comments");
 const fromDb = ref(database, "endorsements/from");
 
-const textFieldEl = document.getElementById("endorsementInput");
+const textFieldEl = document.getElementById("endorsement-input");
 const publishBtnEl = document.getElementById("publishBtn");
 const endorsementsListEl = document.getElementById("endorsements-list");
 const toEl = document.getElementById("to-input");
