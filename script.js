@@ -52,7 +52,6 @@ publishBtnEl.addEventListener("click", function () {
 onValue(endorsementsDb, function (snapshot) {
   if (snapshot.exists()) {
     let arr = Object.values(snapshot.val());
-    console.log(arr);
     clearElement(endorsementsListEl);
     loopAppend(arr);
   } 
