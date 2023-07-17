@@ -80,7 +80,7 @@ function clearValue(element) {
   element.value = "";
 }
 
-function appendItem(appendComment, appendTo, appendFrom, element) {
+function appendItem(appendTo, appendComment, appendFrom, element) {
   let section = document.createElement("section");
   section.classList.add("itemBox");
 
