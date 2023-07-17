@@ -1,13 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Josefin+Sans:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Josefin+Sans:wght@400;700&display=swap');
 /* font-family: 'Inter', sans-serif;
 font-family: 'Josefin Sans', sans-serif; */
+:root {
+    --inter: 'Inter', sans-serif;
+    --josefin: 'Josefin Sans', sans-serif;
+    --flex: flex;
+    --white: #ffffff;
+    --black: #04131C;
+    --column: column; 
+    --input-padding: 10px 0 10px 5px;   
+}
 
 body {
     margin: 0;
     padding: 0;
     background: #064E3B;
-    display: flex;
-    flex-direction: column;
+    display: var(--flex);
+    flex-direction: var(--column);
     align-items: center;
     text-align: center;
     justify-content: center;
@@ -18,19 +27,19 @@ header, main {
 }
 
 .flex-column {
-    display: flex;
-    flex-direction: column;
+    display: var(--flex);
+    flex-direction: var(--column);
 }
 
 .flex-row {
-    display: flex;
+    display: var(--flex);
     justify-content: space-between;
     flex-wrap: wrap;
 }
 
 .heading {
-    font-family:'Josefin Sans', sans-serif;
-    color:#ffffff;
+    font-family: var(--josefin);
+    color:var(--white)
 }
 
 .endHeading {
@@ -39,10 +48,10 @@ header, main {
 
 .inputs {
     background: #6EE7B7;
-    display: flex;
+    display: var(--flex);
     border-radius: 5px;
-    font-family: 'Inter', sans-serif;
-    padding: 10px 0 10px 5px;
+    font-family: var(--inter);
+    padding: var(--input-padding);
 }
 
 .hide {
@@ -51,24 +60,24 @@ header, main {
 
 
 .inputs::placeholder {
-    color: #000;
-    font-family: 'Inter', sans-serif;
-    padding: 10px 0 10px 5px;
+    color: var(--black);
+    font-family: var(--inter);
+    padding: var(--input-padding);
 }
 
-.nameInputs {
+.name-inputs {
     margin-bottom: 20px;
 }
 
 .itemBox {
     margin: 20px 0;
-    background: #ffffff;
+    background: var(--white);
     padding: 5px 15px;
     border-radius: 5px;
     order: 0;
-    display: flex;
+    display: var(--flex);
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction: var(--column);
 }
 
 .bold {
@@ -80,7 +89,7 @@ header, main {
 }
 
 .last{
-    display: flex;
+    display: var(--flex);
     justify-content: space-between;
     flex-direction: row;
     margin-bottom: 5px;
@@ -93,10 +102,10 @@ header, main {
 
 #publishBtn {
     background: #C4B5FD;
-    color: #04131C;
+    color: var(--black);
 }
 
-#endorsementInput {
+#endorsement-input {
     margin-bottom: 20px;
 }
 
@@ -105,15 +114,15 @@ header, main {
     box-shadow: none;
     border-radius: 5px;
     padding: 20px;
-    color: #04131C;
-    font-family:'Josefin Sans', sans-serif;
+    color: var(--black);
+    font-family: var(--josefin);
     font-size: 22px;
     font-weight: bold;
 }
 
 #publishBtn:hover {
     background: #4C1D95;
-    color:#ffffff;
+    color:var(--white);
 }
 
 #endorsements-list {
@@ -122,7 +131,7 @@ header, main {
     text-align: left;
     border-radius: 5px;
     padding: 10px 5px;
-    font-family: 'Inter', sans-serif;
+    font-family: var(--inter);
 }
 
 @media (min-width: 576px), (orientation: portrait) { 
